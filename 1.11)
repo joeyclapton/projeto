@@ -1,0 +1,113 @@
+[33mcommit da89a5f467f841653f9990be0a125b30c7e0941f[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Lorrayne Reis <55072609+Lorrayne23@users.noreply.github.com>
+Date:   Thu Aug 19 15:47:34 2021 -0300
+
+    Criação do Projeto
+
+[33mcommit 4e150b3b8d3618adba4211425222ec86c937821c[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Wed Aug 18 18:53:34 2021 -0300
+
+    Update DIAGRAMA_CLASSE.drawio
+
+[33mcommit 65d1f815e0671be47d7bd32d5b42f9a68358e676[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Wed Aug 18 18:00:49 2021 -0300
+
+    Update DIAGRAMA_CLASSE.drawio
+
+[33mcommit 071eeb00dd5ca17f525e3e256d87cb7a38106773[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Mon Aug 16 12:30:58 2021 -0300
+
+    Update DIAGRAMA_CLASSE.drawio
+
+[33mcommit 487eba779c91c0ac16b728eafc99caefd0de8b88[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Mon Aug 16 12:09:08 2021 -0300
+
+    Update DIAGRAMA_CLASSE.drawio
+
+[33mcommit 4e30de5e1f5a6360a0931f4c79c18cef0bf25271[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Mon Aug 16 11:14:50 2021 -0300
+
+    Added DIAGRAMA_CLASSE.drawio
+
+[33mcommit 090fc5181544d1d633c0fe7ea171eff6dcea4092[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Sun Aug 15 20:31:11 2021 -0300
+
+    Added Diagrama_caso_uso.pdf
+
+[33mcommit 8a17f9ac0eeb87ebf69caa221a5b1d3eed9996d7[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Sun Aug 15 20:30:43 2021 -0300
+
+    Update Diagrama_caso_uso
+
+[33mcommit 48269e3ff1b03083c4ebe861dd1e94984c39b017[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Sun Aug 15 20:23:23 2021 -0300
+
+    Delete Diagrama_caso_uso.pdf
+
+[33mcommit 31f067ae0f94c0f01dd8d6f117eef7470f984762[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Sun Aug 15 14:03:01 2021 -0300
+
+    Update Diagrama_caso_uso
+
+[33mcommit 124afa4833796e6384d9a5ace00f017091d3c16c[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Sun Aug 15 13:59:55 2021 -0300
+
+    Update Diagrama_caso_uso
+
+[33mcommit 82f8bbd8364b68181b6fa3c5efbae954c1b3e207[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Sat Aug 14 18:00:32 2021 -0300
+
+    Added Diagrama_caso_uso.pdf
+
+[33mcommit 413f14d6477832582a68a53dd79d236218ad3588[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Sat Aug 14 18:00:00 2021 -0300
+
+    Update Diagrama_caso_uso
+
+[33mcommit 1b3db3f1634eb3d2d638d35415be2e79cb7bda78[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Sat Aug 14 17:53:59 2021 -0300
+
+    Atualiza README adicionando histórias de usuário
+
+[33mcommit 097642949de0eddfa47b064256e17dacb4c6f254[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Sat Aug 14 17:33:47 2021 -0300
+
+    Added Diagrama_caso_uso
+
+[33mcommit a0128c54416a1c62b93bd781ed9af3f71b5bd611[m
+Author: Lorrayne Reis <55072609+Lorrayne23@users.noreply.github.com>
+Date:   Fri Aug 13 17:59:36 2021 -0300
+
+    Histórias de Usuário iniciais
+
+[33mcommit b71dc131563fd2ef32ceab1224fc57449c91a865[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Mon Aug 9 11:38:20 2021 -0300
+
+    feat: titulo do readme
+
+[33mcommit 3e5ee175a5b6abe0d21083e81f4cb99ca2c24464[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Mon Aug 9 11:36:13 2021 -0300
+
+    feat: cria readme
+
+[33mcommit 25cb8c1ab46190b7cb6dc1c848d4416ad652a9c1[m
+Author: Joey Clapton <joeyclapton42@gmail.com>
+Date:   Mon Aug 9 11:33:09 2021 -0300
+
+    feat: cria pasta de implementação
