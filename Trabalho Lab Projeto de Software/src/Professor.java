@@ -1,19 +1,16 @@
-public abstract class Professor  implements IUsuario {
+public abstract class Professor extends Usuario {
 
-    protected String nome;
-    protected String senha;
 
-    public Professor(){
+
+    public Professor(String nome, String senha){
+        this.setNome(nome);
+        this.setSenha(senha);
 
     }
-
     public void listarAlunosMatriculados(){
 
     }
 
-    public void fazerLogin(String nome, String senha) {
-
-    }
 
 
 }

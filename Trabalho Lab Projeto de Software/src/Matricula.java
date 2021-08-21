@@ -3,12 +3,13 @@ public class Matricula  implements  IDisciplina{
     protected int num_creditos ;
     protected Curso curso;
 
-    public Matricula(int id, int num_creditos, Curso curso){
+    public Matricula(int id, int num_creditos){
+         this.id = id;
+         this.num_creditos =num_creditos;
 
     }
 
     public void cadastrarDisciplina( int id_disciplina){
-
 
     }
 
@@ -21,6 +22,20 @@ public class Matricula  implements  IDisciplina{
 
     }
 
+    public void setNum_creditos(int num_creditos){
+         this.num_creditos=num_creditos;
+    }
+    public int getNum_creditos(){
+        return num_creditos;
+    }
+
+    public void setCurso(Curso curso){
+         this.curso = curso;
+    }
+
+    public Curso getCurso(){
+         return  curso;
+    }
 
 
 
