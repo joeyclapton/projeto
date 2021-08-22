@@ -4,44 +4,42 @@ public abstract class Usuario {
     protected String nome;
     protected String senha;
 
-
-    public Usuario(){
-
-    }
-
-    public void gerarMatricula(){
-
-    }
-    public void fazerLogin(){
+    public Usuario() {
 
     }
 
-    public void setNome(String nome){
+    public void gerarMatricula() {
+
+    }
+
+    public void fazerLogin() {
+
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setMatricula(int matricula){
-        this.matricula= matricula;
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
     }
 
-    public void setSenha(String senha){
-        this.senha=senha;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
-    public String getNome(){
+    public String getNome() {
         return nome;
     }
 
-    public int getMatricula(){
+    public int getMatricula() {
 
         return matricula;
     }
 
-    public String getSenha(){
+    public String getSenha() {
 
         return senha;
     }
-
-
 
 }
