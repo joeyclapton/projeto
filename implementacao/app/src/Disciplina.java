@@ -10,7 +10,6 @@ public class Disciplina {
   }
 
   public boolean verificarAptidao() {
-
     return (this.getNumero_alunos() >= MIN_ALUNOS_INSCRITOS);
   }
 

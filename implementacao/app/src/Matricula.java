@@ -1,23 +1,19 @@
-public class Matricula implements IDisciplina {
-     protected int id;
-     protected int num_creditos;
-     protected Curso curso;
+public class Matricula {
+     private int id;
+     private int num_creditos;
+     private Curso curso;
 
-     public Matricula(int id, int num_creditos) {
+     public Matricula(int id, int num_creditos, Curso curso) {
           this.id = id;
           this.num_creditos = num_creditos;
-
-     }
-
-     public void cadastrarDisciplina(int id_disciplina) {
-
-     }
-
-     public void removerDisciplina(int id_disciplina) {
-
+          this.curso = curso;
      }
 
      public void efetuarMatricula(int matricula) {
+
+     }
+
+     public void cancelarMatricula(int matricula) {
 
      }
 
