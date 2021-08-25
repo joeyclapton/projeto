@@ -1,7 +1,8 @@
-public class Matricula implements IDisciplina {
+public class Matricula  {
      protected int id;
      protected int num_creditos;
      protected Curso curso;
+     protected  String situacao;
 
      public Matricula(int id, int num_creditos) {
           this.id = id;
@@ -9,15 +10,11 @@ public class Matricula implements IDisciplina {
 
      }
 
-     public void cadastrarDisciplina(int id_disciplina) {
-
-     }
-
-     public void removerDisciplina(int id_disciplina) {
-
-     }
-
      public void efetuarMatricula(int matricula) {
+
+     }
+
+     public void cancelarMatricula(int matricula) {
 
      }
 

@@ -17,4 +17,10 @@ public class Aluno extends Usuario {
 
     public void cadastrarDisciplinas() {
     }
+
+    public void emitirHistorico(){
+
+    }
+
+
 }
