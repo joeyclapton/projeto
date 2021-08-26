@@ -14,14 +14,41 @@ public class Curso {
   }
 
   public void removerDisciplina(Disciplina disciplina) {
-     disciplinas.remove(disciplina);
+
+    disciplinas.remove(disciplina);
+    System.out.println("Disciplina removida");
+  }
+
+  public boolean verificalimiteCreditoDisciplinaCurso(){
+    int somaCreditos = 0;
+    for(Disciplina disciplina : disciplinas ){
+      somaCreditos+=disciplina.getNum_creditosDisciplina();
+    }
+    return (somaCreditos<this.numCreditos);
   }
 
   public void cadastrarDisciplina(Disciplina disciplina) {
 
-    disciplinas.add(disciplina);
+    if(verificalimiteCreditoDisciplinaCurso()){
+        disciplinas.add(disciplina);
+        System.out.println("Disciplina Cadastrada ");
+
+    }else{
+
+        System.out.println("Disciplina não cadastra !"); /* Aqui é necessário criar exeception e não texto */
+    }
+
+
+
   }
 
+
+
+  public void disciplinasCurso(){
+     for(Disciplina disciplina : disciplinas){
+       System.out.println(disciplina.getId()+" "+disciplina.getNome()+" "+disciplina.getNum_creditosDisciplina()+" "+disciplina.getTipo());
+     }
+  }
   public void setNome(String nome) {
     this.nome = nome;
   }

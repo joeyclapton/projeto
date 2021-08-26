@@ -8,12 +8,16 @@ public class Disciplina {
   public int numeroAlunos;
   public boolean ativa;
   protected Curso curso;
-  public int tipo ;
   public String nome;
+  public int num_creditos;
+  public ClassificacaoDisciplina tipo;
 
-  public Disciplina(String nome,int id) {
+
+  public Disciplina(String nome,int id, int num_creditos, ClassificacaoDisciplina tipo) {
     this.nome = nome;
     this.id = id;
+    this.num_creditos= num_creditos;
+    this.tipo = tipo;
   }
 
   public boolean verificarAptidao() {
@@ -55,4 +59,20 @@ public class Disciplina {
   public String getNome() {
     return nome;
   }
+  public void setNum_creditos(int num_creditos) {
+    this.num_creditos = num_creditos;
+  }
+
+  public int getNum_creditosDisciplina() {
+    return num_creditos;
+  }
+
+  public void setTipo(ClassificacaoDisciplina tipo) {
+    this.tipo = tipo;
+  }
+
+  public ClassificacaoDisciplina getTipo() {
+    return tipo;
+  }
 }
+

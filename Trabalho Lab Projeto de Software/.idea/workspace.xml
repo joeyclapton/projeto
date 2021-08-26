@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e04d4966-1b56-4243-86f3-ddd6516d4a5a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../implementacao/app/src/ILogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../implementacao/app/src/Semestre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../implementacao/app/src/Turma.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../implementacao/app/src/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/../implementacao/app/src/Aluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../implementacao/app/src/Curso.java" beforeDir="false" afterPath="$PROJECT_DIR$/../implementacao/app/src/Curso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../implementacao/app/src/Disciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/../implementacao/app/src/Disciplina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../implementacao/app/src/IDisciplina.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../implementacao/app/src/Matricula.java" beforeDir="false" afterPath="$PROJECT_DIR$/../implementacao/app/src/Matricula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../implementacao/app/src/Secretaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/../implementacao/app/src/Secretaria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../implementacao/app/src/Teste.java" beforeDir="false" afterPath="$PROJECT_DIR$/../implementacao/app/src/Teste.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../implementacao/app/src/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../implementacao/app/src/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

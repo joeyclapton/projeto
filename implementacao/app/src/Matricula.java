@@ -1,12 +1,10 @@
 public class Matricula  {
      protected int id;
-     protected int num_creditos;
      protected Curso curso;
      protected  String situacao;
 
-     public Matricula(int id, int num_creditos) {
+     public Matricula(int id) {
           this.id = id;
-          this.num_creditos = num_creditos;
 
      }
 
@@ -18,13 +16,7 @@ public class Matricula  {
 
      }
 
-     public void setNum_creditos(int num_creditos) {
-          this.num_creditos = num_creditos;
-     }
 
-     public int getNum_creditos() {
-          return num_creditos;
-     }
 
      public void setCurso(Curso curso) {
           this.curso = curso;
