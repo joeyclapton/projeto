@@ -8,7 +8,7 @@ public abstract class Usuario {
 
     }
 
-    public void gerarMatricula() {
+    public void trocarSenha() {
 
     }
 

@@ -8,6 +8,8 @@ public class Aluno extends Usuario {
     protected List<Disciplina> disciplinasObrigatorias = new LinkedList<>();
     protected List<Disciplina> disciplinasOpcionais = new LinkedList<>();
     protected Curso curso;
+    protected  Disciplina disciplina;
+    Matricula matricula;
 
     public Aluno(String nome, String senha, int matricula) {
         this.setMatricula(matricula);
@@ -16,5 +18,25 @@ public class Aluno extends Usuario {
     }
 
     public void cadastrarDisciplinas() {
+        if(vericaLimiteDisciplinaObrigatoria()){
+
+
+        }
+
     }
+
+    public boolean vericaLimiteDisciplinaObrigatoria(){
+        return (disciplinasObrigatorias.size()<MAX_OBRIGATORIAS);
+    }
+    public boolean vericaLimiteDisciplinaOpcional(){
+        return (disciplinasObrigatorias.size()<MAX_OPCIONAIS);
+    }
+
+    public void emitirHistorico(){
+
+    }
+
+
+
+
 }
