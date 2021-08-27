@@ -1,20 +1,37 @@
+import java.util.Date;
+
 public class Matricula {
      private int id;
      private int num_creditos;
      private Curso curso;
+     private Date dataInicial;
+     private Date dataFinal;
+     private Date dataAtual;
+     private String statusAtual;
 
-     public Matricula(int id, int num_creditos, Curso curso) {
+     public Matricula(int id, int num_creditos, Date dataInicial, Date dataFinal, Curso curso) {
           this.id = id;
           this.num_creditos = num_creditos;
           this.curso = curso;
+          this.dataInicial = dataInicial;
+          this.dataFinal = dataFinal;
+          this.statusAtual = Status.NAO_MATRICULADO.name();
      }
 
-     public void efetuarMatricula(int matricula) {
+     public void efetuarMatricula() {
+          if (this.dataAtual.before(dataInicial) && this.dataAtual.after(dataFinal)) {
+               this.statusAtual = Status.MATRICULADO.name();
+          }
 
+          this.statusAtual = Status.NAO_MATRICULADO.name();
      }
 
-     public void cancelarMatricula(int matricula) {
+     public void cancelarMatricula() {
+          this.statusAtual = Status.CANCELADA.name();
+     }
 
+     public void trancarCurso() {
+          this.statusAtual = Status.TRANCADA.name();
      }
 
      public void setNum_creditos(int num_creditos) {
@@ -27,6 +44,14 @@ public class Matricula {
 
      public void setCurso(Curso curso) {
           this.curso = curso;
+     }
+
+     public void setStatusAtual(String statusAtual) {
+          this.statusAtual = statusAtual;
+     }
+
+     public String getStatusAtual() {
+          return this.statusAtual;
      }
 
      public Curso getCurso() {

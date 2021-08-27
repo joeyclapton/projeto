@@ -1,0 +1,3 @@
+public enum Status {
+    MATRICULADO, NAO_MATRICULADO, CANCELADA, TRANCADA;
+}
