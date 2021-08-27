@@ -1,4 +1,6 @@
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Aluno extends Usuario {
@@ -15,6 +17,8 @@ public class Aluno extends Usuario {
         this.setMatricula(matricula);
         this.setNome(nome);
         this.setSenha(senha);
+
+        this.matricula = new Matricula(matricula, 100, LocalDateTime.now(), LocalDateTime.now(), curso);
         this.matricula.efetuarMatricula();
     }
 

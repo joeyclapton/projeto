@@ -1,25 +1,27 @@
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Matricula {
      private int id;
      private int num_creditos;
      private Curso curso;
-     private Date dataInicial;
-     private Date dataFinal;
-     private Date dataAtual;
+     private LocalDateTime dataInicial;
+     private LocalDateTime dataFinal;
+     private LocalDateTime dataAtual;
      private String statusAtual;
 
-     public Matricula(int id, int num_creditos, Date dataInicial, Date dataFinal, Curso curso) {
+     public Matricula(int id, int num_creditos, LocalDateTime dataInicial, LocalDateTime dataFinal, Curso curso) {
           this.id = id;
           this.num_creditos = num_creditos;
           this.curso = curso;
           this.dataInicial = dataInicial;
           this.dataFinal = dataFinal;
+          this.dataAtual = LocalDateTime.now();
           this.statusAtual = Status.NAO_MATRICULADO.name();
      }
 
      public void efetuarMatricula() {
-          if (this.dataAtual.before(dataInicial) && this.dataAtual.after(dataFinal)) {
+          if (this.dataAtual.isBefore(dataInicial) && this.dataAtual.isAfter(dataFinal)) {
                this.statusAtual = Status.MATRICULADO.name();
           }
 
