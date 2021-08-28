@@ -3,8 +3,8 @@ import java.util.*;
 public class Curso {
   public String nome;
   public int numCreditos;
+  Matricula matricula;
   protected List<Disciplina> disciplinas = new LinkedList<>() ;
-
 
 
 
@@ -14,8 +14,8 @@ public class Curso {
   }
 
   public void removerDisciplina(Disciplina disciplina) {
-
     disciplinas.remove(disciplina);
+
     System.out.println("Disciplina removida");
   }
 
@@ -31,7 +31,7 @@ public class Curso {
 
     if(verificalimiteCreditoDisciplinaCurso()){
         disciplinas.add(disciplina);
-        System.out.println("Disciplina Cadastrada ");
+        System.out.println("Disciplina Cadastrada !");
 
     }else{
 
@@ -41,7 +41,6 @@ public class Curso {
 
 
   }
-
 
 
   public void disciplinasCurso(){
@@ -71,5 +70,13 @@ public class Curso {
 
   public List<Disciplina> getDisciplinas() {
     return disciplinas;
+  }
+
+  public void setMatricula(Matricula matricula) {
+    this.matricula = matricula;
+  }
+
+  public Matricula getMatricula() {
+    return matricula;
   }
 }

@@ -5,7 +5,8 @@ public class Semestre {
     public Date fimSemestre;
 
     public Semestre (Date inicioSemestre, Date fimSemestre){
-
+        this.inicioSemestre = inicioSemestre;
+        this.fimSemestre = fimSemestre;
     }
 
     public void setInicioSemestre(Date inicioSemestre){
