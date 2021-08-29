@@ -14,11 +14,15 @@ import entity.Usuario;
 import entity.Aluno;
 import entity.Professor;
 import entity.Secretaria;
+import commons.ClassificacaoDisciplinaEnum;
 import utils.Teclado;
 
 public class Menu {
     private ArrayList<Usuario> usuarios;
     private List<String> dadosUsuarios;
+
+    private ArrayList<Disciplina> disciplinas;
+    private List<String> dadosDisciplinas;
 
     public Menu() throws Exception {
         this.init();
@@ -27,6 +31,8 @@ public class Menu {
     private void init() throws Exception {
         Scanner teclado = new Scanner(System.in);
         this.usuarios = new ArrayList<>();
+        this.disciplinas = new ArrayList<>();
+
         this.popularDados();
 
         Usuario usuarioLogado = this.login(teclado, this.usuarios);
@@ -36,9 +42,9 @@ public class Menu {
 
     private Usuario login(Scanner teclado, ArrayList<Usuario> usuarios) {
         System.out.println("Fazer login");
+
         System.out.println("Digite sua matrícula: ");
         int matricula = teclado.nextInt();
-
         teclado.nextLine();
 
         System.out.println("Digite sua senha: ");
@@ -71,15 +77,36 @@ public class Menu {
         }
     }
 
+    private void cadastrarDisciplinas() {
+        for (int i = 0; i < this.dadosDisciplinas.size(); i++) {
+            String dadoDisciplina[] = this.dadosDisciplinas.get(i).split(";");
+            String nome = dadoDisciplina[0];
+            int num_creditos = Integer.parseInt(dadoDisciplina[1]);
+            String tipo = dadoDisciplina[2];
+
+            if (tipo.equals("OBRIGATORIA")) {
+                this.disciplinas
+                        .add(new Disciplina(nome, num_creditos, ClassificacaoDisciplinaEnum.OBRIGATORIA, null, null));
+            } else {
+                this.disciplinas
+                        .add(new Disciplina(nome, num_creditos, ClassificacaoDisciplinaEnum.OPTATIVA, null, null));
+            }
+        }
+    }
+
     private void popularDados() throws IOException {
         String pathUsuarios = ("implementacao/app/src/data/usuarios.txt");
+        String pathDisciplinas = ("implementacao/app/src/data/disciplinas.txt");
+
         this.dadosUsuarios = readAllLines(Paths.get(pathUsuarios), Charset.defaultCharset());
+        this.dadosDisciplinas = readAllLines(Paths.get(pathDisciplinas), Charset.defaultCharset());
 
         this.cadastrarUsuarios();
+        this.cadastrarDisciplinas();
     }
 
     private int menuSecretaria(Scanner teclado) {
-        System.out.println("Secretaria:");
+        System.out.println("Sistema secretaria");
         this.divisor();
         System.out.println("Digite sua opção: ");
         System.out.println("1- Gerar currículo semestral para curso");
@@ -87,10 +114,48 @@ public class Menu {
         System.out.println("0 - Sair");
 
         int opcao = teclado.nextInt();
-
         teclado.nextLine();
 
         return opcao;
+    }
+
+    private int menuProfessor(Scanner teclado) {
+        System.out.println("Sistema professor");
+        this.divisor();
+        System.out.println("Digite sua opção: ");
+        System.out.println("1- Listar alunos");
+        System.out.println("0 - Sair");
+
+        int opcao = teclado.nextInt();
+        teclado.nextLine();
+
+        return opcao;
+    }
+
+    private int menuAluno(Scanner teclado) {
+        System.out.println("Sistema aluno");
+        this.divisor();
+        System.out.println("Digite sua opção: ");
+        System.out.println("1- Cadastrar disciplina");
+        System.out.println("0- Sair");
+
+        int opcao = teclado.nextInt();
+        teclado.nextLine();
+
+        return opcao;
+    }
+
+    private void listarDisciplinas(int opcao) {
+        Teclado.limparTela();
+        var disciplinaSelecionada = null;
+
+        for (int i = 0; i < this.disciplinas.size(); i++) {
+            var disciplina = this.disciplinas.get(i);
+
+            this.divisor();
+
+            System.out.println((i + 1) + "- " + disciplina.getNome() + " - " + disciplina.getTipo());
+        }
     }
 
     private void divisor() {
@@ -122,6 +187,22 @@ public class Menu {
 
                     var aluno = secretaria.adicionarAluno(matricula, nome, senha);
                     this.usuarios.add(aluno);
+                }
+
+            } while (opcao != 0);
+        } else if (usuarioLogado.getClass().equals(Aluno.class)) {
+            var opcao = 0;
+
+            do {
+                opcao = menuAluno(teclado);
+
+                switch (opcao) {
+                    case 1:
+                        System.out.println("Digite a matéria escolhida: ");
+                        var materia = teclado.nextInt();
+
+                        this.listarDisciplinas(materia);
+                        break;
                 }
 
             } while (opcao != 0);
