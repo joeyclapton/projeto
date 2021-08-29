@@ -1,52 +1,20 @@
 package entity;
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class Curso {
-  public String nome;
-  public int numCreditos;
   Matricula matricula;
-  protected List<Disciplina> disciplinas = new LinkedList<>();
+
+  private String nome;
+  private int numCreditos;
+  private ArrayList<Disciplina> disciplinas = new ArrayList<>();
 
   public Curso(String nome, int numCreditos) {
-    this.nome = nome;
-    this.numCreditos = numCreditos;
+    this.setNome(nome);
+    this.setNumCreditos(numCreditos);
   }
 
-  public void removerDisciplina(Disciplina disciplina) {
-    disciplinas.remove(disciplina);
-
-    System.out.println("Disciplina removida");
-  }
-
-  public boolean verificalimiteCreditoDisciplinaCurso() {
-    int somaCreditos = 0;
-    for (Disciplina disciplina : disciplinas) {
-      somaCreditos += disciplina.getNum_creditosDisciplina();
-    }
-    return (somaCreditos < this.numCreditos);
-  }
-
-  public void cadastrarDisciplina(Disciplina disciplina) {
-
-    if (verificalimiteCreditoDisciplinaCurso()) {
-      disciplinas.add(disciplina);
-      System.out.println("Disciplina Cadastrada !");
-
-    } else {
-
-      System.out.println("Disciplina não cadastra !"); /* Aqui é necessário criar exeception e não texto */
-    }
-
-  }
-
-  public void disciplinasCurso() {
-    for (Disciplina disciplina : disciplinas) {
-      System.out.println(disciplina.getId() + " " + disciplina.getNome() + " " + disciplina.getNum_creditosDisciplina()
-          + " " + disciplina.getTipo());
-    }
-  }
-
+  // #region Getters and Setters
   public void setNome(String nome) {
     this.nome = nome;
   }
@@ -63,11 +31,11 @@ public class Curso {
     return numCreditos;
   }
 
-  public void setDisciplinas(List<Disciplina> disciplinas) {
+  public void setDisciplinas(ArrayList<Disciplina> disciplinas) {
     this.disciplinas = disciplinas;
   }
 
-  public List<Disciplina> getDisciplinas() {
+  public ArrayList<Disciplina> getDisciplinas() {
     return disciplinas;
   }
 
@@ -77,5 +45,44 @@ public class Curso {
 
   public Matricula getMatricula() {
     return matricula;
+  }
+  // #endregion
+
+  public void cadastrarDisciplina(Disciplina disciplina) {
+    if (disciplina != null && verificalimiteCreditoDisciplinaCurso()) {
+      disciplinas.add(disciplina);
+      System.out.println("Disciplina cadastrada!");
+    }
+  }
+
+  public void removerDisciplina(Disciplina disciplina) {
+    if (disciplina != null) {
+      disciplinas.remove(disciplina);
+      System.out.println("Disciplina removida!");
+    }
+  }
+
+  public boolean verificalimiteCreditoDisciplinaCurso() {
+    int somaCreditos = 0;
+
+    for (Disciplina disciplina : disciplinas) {
+      somaCreditos += disciplina.getNum_creditosDisciplina();
+    }
+
+    return (somaCreditos < this.numCreditos);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder disciplinasStr = new StringBuilder();
+
+    for (Disciplina disciplina : this.disciplinas) {
+      disciplinasStr.append(disciplina.getId());
+      disciplinasStr.append(disciplina.getNome());
+      disciplinasStr.append(disciplina.getNum_creditosDisciplina());
+      disciplinasStr.append(disciplina.getTipo());
+    }
+
+    return disciplinasStr.toString();
   }
 }

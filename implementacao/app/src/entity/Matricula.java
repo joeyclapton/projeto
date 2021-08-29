@@ -28,24 +28,15 @@ public class Matricula {
      }
 
      public void efetuarMatricula() {
-          // if (this.dataAtual.isBefore(dataInicial) &&
-          // this.dataAtual.isAfter(dataFinal)) {
-          // this.statusAtual = Status.MATRICULADO.name();
           this.disciplina.addAlunoDisciplina(this.aluno);
           System.out.println("Aluno cadastrado disciplina !" + this.aluno.getNome());
-          // }
-          // this.statusAtual = Status.NAO_MATRICULADO.name();
      }
 
      public void cancelarMatricula() {
-
-          this.disciplina.removeAlunoDisciplina(this.aluno);
-          // this.statusAtual = Status.CANCELADA.name();
+          this.disciplina.removerAlunoDisciplina(this.aluno);
      }
 
      public void trancarCurso() {
-
-          // this.statusAtual = Status.TRANCADA.name();
      }
 
      /*

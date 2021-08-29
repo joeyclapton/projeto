@@ -24,14 +24,17 @@ public class Secretaria extends Usuario {
 
     }
 
-    public void manterInformacoesDisciplinas(Disciplina disciplina) {
+    // public void manterInformacoesDisciplinas(Disciplina disciplina) {
 
-        System.out.println("Disciplina do curso : " + disciplina.curso.getNome() + "\n Nome : " + disciplina.getNome()
-                + "\n Créditos:" + disciplina.getNum_creditosDisciplina() + "\n Estado Disciplina : "
-                + disciplina.estadoDisciplina() + "\n Professor : " + disciplina.professor.getNome());
+    // System.out.println("Disciplina do curso : " + disciplina.curso.getNome() +
+    // "\n Nome : " + disciplina.getNome()
+    // + "\n Créditos:" + disciplina.getNum_creditosDisciplina() + "\n Estado
+    // Disciplina : "
+    // + disciplina.estadoDisciplina() + "\n Professor : " +
+    // disciplina.professor.getNome());
 
-        disciplina.alunosMatriculados();
+    // disciplina.alunosMatriculados();
 
-    }
+    // }
 
 }
