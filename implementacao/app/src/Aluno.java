@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import commons.ClassificacaoDisciplinaEnum;
+
 public class Aluno extends Usuario {
 
     private static final int MAX_OBRIGATORIAS = 2;
@@ -54,7 +56,7 @@ public class Aluno extends Usuario {
 
     public void cancelarDisciplina(Disciplina disciplinaCancelar) {
 
-        if (disciplinaCancelar.getTipo() == ClassificacaoDisciplina.OPTATIVA) {
+        if (disciplinaCancelar.getTipo() == ClassificacaoDisciplinaEnum.OPTATIVA) {
             for (Disciplina disciplina : disciplinasOpcionais) {
                 if (disciplina == disciplinaCancelar) {
                     disciplinasOpcionais.remove(disciplina);

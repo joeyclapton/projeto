@@ -1,139 +1,123 @@
-// import java.awt.*;
-// import java.lang.reflect.AnnotatedArrayType;
-// import java.time.LocalDateTime;
-// import java.util.LinkedList;
-// import java.util.List;
+import java.awt.*;
+import java.lang.reflect.AnnotatedArrayType;
+import java.time.LocalDateTime;
+import java.util.LinkedList;
+import java.util.List;
 
-// public class Teste {
+import commons.ClassificacaoDisciplinaEnum;
 
-// public static void main(String[] args) throws Exception {
+public class Teste {
 
-// Curso curso1 = new Curso("Engenharia de Software", 590);
-// /*
-// * Menu srcretária , cadastra curso , cadastra disciplinas em curso , adiciona
-// * disciplina ao curso
-// */
+        public static void main(String[] args) throws Exception {
 
-// System.out.println(curso1.getNome());
-// System.out.println(curso1.getNumCreditos());
-// Professor caram = new Professor("Caram", "35577", 234);
+                Curso curso1 = new Curso("Engenharia de Software", 590);
+                /*
+                 * Menu srcretária , cadastra curso , cadastra disciplinas em curso , adiciona
+                 * disciplina ao curso
+                 */
 
-// Disciplina desenvolvimentoSoftware = new Disciplina("Deselvolvimento de
-// Softaware", 89, 8,
-// ClassificacaoDisciplina.OBRIGATORIA, curso1, caram);
-// Disciplina modular = new Disciplina("Modular", 45, 9,
-// ClassificacaoDisciplina.OBRIGATORIA, curso1, caram);
-// Disciplina inteligenciaArtificial = new Disciplina("Inteligência Artifical ",
-// 63, 6,
-// ClassificacaoDisciplina.OPTATIVA, curso1, caram);
-// Disciplina engenhariaRequisitos = new Disciplina("Engenharia Requisitos", 9,
-// 25,
-// ClassificacaoDisciplina.OPTATIVA, curso1, caram);
-// Disciplina computadoresSociedade = new Disciplina("Computadores e Sociedade",
-// 144, 2,
-// ClassificacaoDisciplina.OBRIGATORIA, curso1, caram);
-// Disciplina aed1 = new Disciplina("AED I", 6, 3,
-// ClassificacaoDisciplina.OBRIGATORIA, curso1, caram);
-// // adiciona disciplinas para o professor
-// caram.addDisciplinaProdessor(desenvolvimentoSoftware);
-// caram.addDisciplinaProdessor(computadoresSociedade);
-// caram.addDisciplinaProdessor(engenhariaRequisitos);
-// System.out.println(desenvolvimentoSoftware.getNome());
-// System.out.println(desenvolvimentoSoftware.getId());
-// System.out.println(modular.getNome());
-// System.out.println(modular.getId());
+                System.out.println(curso1.getNome());
+                System.out.println(curso1.getNumCreditos());
+                Professor caram = new Professor("Caram", "35577", 234);
 
-// curso1.cadastrarDisciplina(desenvolvimentoSoftware);
-// curso1.cadastrarDisciplina(modular);
-// curso1.cadastrarDisciplina(inteligenciaArtificial);
-// curso1.cadastrarDisciplina(engenhariaRequisitos);
-// curso1.cadastrarDisciplina(computadoresSociedade);
-// curso1.cadastrarDisciplina(aed1);
+                Disciplina desenvolvimentoSoftware = new Disciplina("Deselvolvimento de Softaware", 89, 8,
+                                ClassificacaoDisciplinaEnum.OBRIGATORIA, curso1, caram);
+                Disciplina modular = new Disciplina("Modular", 45, 9, ClassificacaoDisciplinaEnum.OBRIGATORIA, curso1,
+                                caram);
+                Disciplina inteligenciaArtificial = new Disciplina("Inteligência Artifical ", 63, 6,
+                                ClassificacaoDisciplinaEnum.OPTATIVA, curso1, caram);
+                Disciplina engenhariaRequisitos = new Disciplina("Engenharia Requisitos", 9, 25,
+                                ClassificacaoDisciplinaEnum.OPTATIVA, curso1, caram);
+                Disciplina computadoresSociedade = new Disciplina("Computadores e Sociedade", 144, 2,
+                                ClassificacaoDisciplinaEnum.OBRIGATORIA, curso1, caram);
+                Disciplina aed1 = new Disciplina("AED I", 6, 3, ClassificacaoDisciplinaEnum.OBRIGATORIA, curso1, caram);
+                // adiciona disciplinas para o professor
+                caram.addDisciplinaProdessor(desenvolvimentoSoftware);
+                caram.addDisciplinaProdessor(computadoresSociedade);
+                caram.addDisciplinaProdessor(engenhariaRequisitos);
+                System.out.println(desenvolvimentoSoftware.getNome());
+                System.out.println(desenvolvimentoSoftware.getId());
+                System.out.println(modular.getNome());
+                System.out.println(modular.getId());
 
-// System.out.println(curso1.getDisciplinas());
-// curso1.removerDisciplina(modular);
-// Disciplina projetoSoftware = new Disciplina("Projeto Software", 76, 5,
-// ClassificacaoDisciplina.OBRIGATORIA,
-// curso1, caram);
-// curso1.cadastrarDisciplina(projetoSoftware);
-// System.out.println(curso1.getDisciplinas()); /* verifica inserção de
-// disciplinas na lista */
-// curso1.disciplinasCurso(); /* mostra disciplinas do curso */
+                curso1.cadastrarDisciplina(desenvolvimentoSoftware);
+                curso1.cadastrarDisciplina(modular);
+                curso1.cadastrarDisciplina(inteligenciaArtificial);
+                curso1.cadastrarDisciplina(engenhariaRequisitos);
+                curso1.cadastrarDisciplina(computadoresSociedade);
+                curso1.cadastrarDisciplina(aed1);
 
-// Aluno joao = new Aluno("João", "678", 384, curso1);
-// Aluno carla = new Aluno("Carla", "562", 278, curso1);
-// joao.cadastrarDisciplinasObrigatorias(desenvolvimentoSoftware); // cadastra
-// disciplina obrigatória
+                System.out.println(curso1.getDisciplinas());
+                curso1.removerDisciplina(modular);
+                Disciplina projetoSoftware = new Disciplina("Projeto Software", 76, 5,
+                                ClassificacaoDisciplinaEnum.OBRIGATORIA, curso1, caram);
+                curso1.cadastrarDisciplina(projetoSoftware);
+                System.out.println(curso1.getDisciplinas()); /* verifica inserção de disciplinas na lista */
+                curso1.disciplinasCurso(); /* mostra disciplinas do curso */
 
-// joao.cadastrarDisciplinasObrigatorias(projetoSoftware);
-// joao.cadastrarDisciplinasOpcionais(engenhariaRequisitos); // cadastra
-// disciplina opcional
-// joao.cadastrarDisciplinasOpcionais(inteligenciaArtificial);
-// System.out.println("-----------");
+                Aluno joao = new Aluno("João", "678", 384, curso1);
+                Aluno carla = new Aluno("Carla", "562", 278, curso1);
+                joao.cadastrarDisciplinasObrigatorias(desenvolvimentoSoftware); // cadastra disciplina obrigatória
 
-// joao.exibirMatriculas();
-// joao.cancelarDisciplina(engenhariaRequisitos); // cancela disciplina
-// joao.cancelarDisciplina(desenvolvimentoSoftware); // cancela disciplina
-// joao.cadastrarDisciplinasObrigatorias(modular); // cadastra nova
-// joao.exibirMatriculas(); // exibe as matriculas realizadas
+                joao.cadastrarDisciplinasObrigatorias(projetoSoftware);
+                joao.cadastrarDisciplinasOpcionais(engenhariaRequisitos); // cadastra disciplina opcional
+                joao.cadastrarDisciplinasOpcionais(inteligenciaArtificial);
+                System.out.println("-----------");
 
-// carla.cadastrarDisciplinasObrigatorias(aed1);
-// carla.cadastrarDisciplinasObrigatorias(modular);
-// carla.cadastrarDisciplinasOpcionais(engenhariaRequisitos);
+                joao.exibirMatriculas();
+                joao.cancelarDisciplina(engenhariaRequisitos); // cancela disciplina
+                joao.cancelarDisciplina(desenvolvimentoSoftware); // cancela disciplina
+                joao.cadastrarDisciplinasObrigatorias(modular); // cadastra nova
+                joao.exibirMatriculas(); // exibe as matriculas realizadas
 
-// Matricula novaMatricula = new Matricula(joao, engenhariaRequisitos); //
-// matricula joao
-// novaMatricula.efetuarMatricula();
-// Matricula novaMatricula2 = new Matricula(carla, engenhariaRequisitos); //
-// matricula carla
-// novaMatricula2.efetuarMatricula();
-// System.out.println(engenhariaRequisitos.alunos.size()); // verifica quantos
-// alunos estão matriculados
+                carla.cadastrarDisciplinasObrigatorias(aed1);
+                carla.cadastrarDisciplinasObrigatorias(modular);
+                carla.cadastrarDisciplinasOpcionais(engenhariaRequisitos);
 
-// novaMatricula.cancelarMatricula(); // cancela matricula
+                Matricula novaMatricula = new Matricula(joao, engenhariaRequisitos); // matricula joao
+                novaMatricula.efetuarMatricula();
+                Matricula novaMatricula2 = new Matricula(carla, engenhariaRequisitos); // matricula carla
+                novaMatricula2.efetuarMatricula();
+                System.out.println(engenhariaRequisitos.alunos.size()); // verifica quantos alunos estão matriculados
 
-// System.out.println(engenhariaRequisitos.alunos.size()); // verifica quantos
-// alunos estão matriculados
+                novaMatricula.cancelarMatricula(); // cancela matricula
 
-// if (engenhariaRequisitos.estadoDisciplina() == false) {
-// curso1.removerDisciplina(engenhariaRequisitos); // remove disciplina que
-// possui menos de 3 alunos
-// }
+                System.out.println(engenhariaRequisitos.alunos.size()); // verifica quantos alunos estão matriculados
 
-// curso1.disciplinasCurso(); // mostra disciplina removida do curso
+                if (engenhariaRequisitos.estadoDisciplina() == false) {
+                        curso1.removerDisciplina(engenhariaRequisitos); // remove disciplina que possui menos de 3
+                                                                        // alunos
+                }
 
-// // SECRETÁRIA
+                curso1.disciplinasCurso(); // mostra disciplina removida do curso
 
-// Secretaria num1 = new Secretaria(124, "Anna", "34567");
+                // SECRETÁRIA
 
-// num1.manterInformacoesAluno(carla); // mostra informações carla
+                Secretaria num1 = new Secretaria(124, "Anna", "34567");
 
-// num1.manterInformacoesDisciplinas(engenhariaRequisitos);// mostra informações
-// disciplina
-// num1.manterInformacoesProfessor(caram); // mostra informação professor
+                num1.manterInformacoesAluno(carla); // mostra informações carla
 
-// caram.listarAlunosMatriculados(engenhariaRequisitos); // mostra os alunos
-// matriculados na disciplina
+                num1.manterInformacoesDisciplinas(engenhariaRequisitos);// mostra informações disciplina
+                num1.manterInformacoesProfessor(caram); // mostra informação professor
 
-// /*
-// * Pontos a resolver : Há períodos para efetuar matrículas, durante os quais
-// um
-// * aluno pode acessar o sistema para se matricular em disciplinas e/ou para
-// * cancelar matrículas feitas anteriormente. -- Melhorar realização matricula
-// --
-// * Criar sistema cobranças Após um aluno se inscrever para um semestre, o
-// * sistema de cobranças é notificado pelo sistema de matrículas, de modo que o
-// * aluno possa ser cobrado pelas disciplinas daquele semestre.
-// *
-// * -- Desenvolver e aplicar Em nenhum dos testes os usuários estão fazendo
-// login
-// * primeiro Todos os usuários do sistema têm senhas que são utilizadas para
-// * validação do respectivo login.
-// *
-// * Corrigir gambiarras
-// *
-// *
-// */
+                caram.listarAlunosMatriculados(engenhariaRequisitos); // mostra os alunos matriculados na disciplina
 
-// }
-// }
+                /*
+                 * Pontos a resolver : Há períodos para efetuar matrículas, durante os quais um
+                 * aluno pode acessar o sistema para se matricular em disciplinas e/ou para
+                 * cancelar matrículas feitas anteriormente. -- Melhorar realização matricula --
+                 * Criar sistema cobranças Após um aluno se inscrever para um semestre, o
+                 * sistema de cobranças é notificado pelo sistema de matrículas, de modo que o
+                 * aluno possa ser cobrado pelas disciplinas daquele semestre.
+                 * 
+                 * -- Desenvolver e aplicar Em nenhum dos testes os usuários estão fazendo login
+                 * primeiro Todos os usuários do sistema têm senhas que são utilizadas para
+                 * validação do respectivo login.
+                 * 
+                 * Corrigir gambiarras
+                 * 
+                 * 
+                 */
+
+        }
+}
