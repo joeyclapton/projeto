@@ -8,12 +8,8 @@ public class Professor extends Usuario {
     List<Disciplina> disciplinasMinistradas = new LinkedList<>();
     Disciplina disciplina;
 
-    public Professor(String nome, String senha, int matricula) {
-        super();
-        this.setNome(nome);
-        this.setSenha(senha);
-        this.setMatricula(matricula);
-
+    public Professor(String nome, String senha) {
+        super(nome, senha);
     }
 
     public void listarAlunosMatriculados(Disciplina disciplina) {

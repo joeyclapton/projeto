@@ -13,36 +13,65 @@ public class Aluno extends Usuario {
     protected List<Disciplina> disciplinasOpcionais = new ArrayList<>();
     protected Curso curso;
 
-    public Aluno(String nome, String senha, int matricula, Curso curso) {
-        this.setMatricula(matricula);
-        this.setNome(nome);
-        this.setSenha(senha);
+    public Aluno(String nome, String senha, Curso curso) {
+        super(nome, senha);
+
         this.setCurso(curso);
-
     }
 
-    public void cadastrarDisciplinasObrigatorias(Disciplina disciplina) throws Exception {
-        try {
-            if (vericaLimiteDisciplinaObrigatoria() && verificaLimiteGeralDisciplina()) {
-                this.disciplinasObrigatorias.add(disciplina);
-            }
-        } catch (Exception e) {
-            throw new Exception("Limite de disciplinas alcançado");
+    // #region Getters and Setters
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
+    public Curso getCurso() {
+        return curso;
+    }
+    // #endregion
+
+    public void cadastrarDisciplinasObrigatorias(Disciplina disciplina) {
+        boolean podeCadastrar = vericaLimiteDisciplinaObrigatoria() && verificaLimiteGeralDisciplina();
+
+        if (podeCadastrar && disciplina != null) {
+            this.disciplinasObrigatorias.add(disciplina);
         }
     }
 
-    public void cadastrarDisciplinasOpcionais(Disciplina disciplina) throws Exception {
-        try {
-            if (vericaLimiteDisciplinaOpcional() && verificaLimiteGeralDisciplina()) {
-                this.disciplinasOpcionais.add(disciplina);
-            }
-        } catch (Exception e) {
-            throw new Exception("É necessária ter matrícula em uma disciplina obrigatória!");
+    public void cadastrarDisciplinasOpcionais(Disciplina disciplina) {
+        boolean podeCadastrar = vericaLimiteDisciplinaOpcional() && verificaLimiteGeralDisciplina();
+
+        if (podeCadastrar && disciplina != null) {
+            this.disciplinasOpcionais.add(disciplina);
         }
+    }
+
+    public void cancelarDisciplinaObrigatoria(Disciplina disciplinaCancelar) {
+
+        if (disciplinaCancelar != null) {
+            for (Disciplina disciplina : disciplinasObrigatorias) {
+                if (disciplina == disciplinaCancelar) {
+                    disciplinasObrigatorias.remove(disciplina);
+                    System.out.println("A disciplina obrigatória: " + disciplina.getNome() + " foi removida.");
+                }
+            }
+        }
+
+    }
+
+    public void cancelarDisciplinaOptativa(Disciplina disciplinaCancelar) {
+
+        if (disciplinaCancelar != null) {
+            for (Disciplina disciplina : disciplinasOpcionais) {
+                if (disciplina == disciplinaCancelar) {
+                    disciplinasOpcionais.remove(disciplina);
+                    System.out.println("A disciplina optativa: " + disciplina.getNome() + " foi removida.");
+                }
+            }
+        }
+
     }
 
     public boolean verificaLimiteGeralDisciplina() {
-
         return ((disciplinasObrigatorias.size() + disciplinasOpcionais.size()) <= 4);
     }
 
@@ -54,52 +83,20 @@ public class Aluno extends Usuario {
         return (disciplinasObrigatorias.size() > 0 && disciplinasOpcionais.size() < MAX_OPCIONAIS);
     }
 
-    public void cancelarDisciplina(Disciplina disciplinaCancelar) {
-
-        if (disciplinaCancelar.getTipo() == ClassificacaoDisciplinaEnum.OPTATIVA) {
-            for (Disciplina disciplina : disciplinasOpcionais) {
-                if (disciplina == disciplinaCancelar) {
-                    disciplinasOpcionais.remove(disciplina);
-                    System.out.println("Disiciplina removida" + disciplina.getNome());
-                }
-
-            }
-
-        } else {
-
-            for (Disciplina disciplina : disciplinasObrigatorias) {
-                if (disciplina == disciplinaCancelar) {
-                    disciplinasObrigatorias.remove(disciplina);
-                    System.out.println("Disiciplina removida" + disciplina.getNome());
-                }
-            }
-
-        }
-
-    }
-
     public void exibirMatriculas() {
 
-        System.out.println("Disciplinas Obrigatórias e Opcionais Matriculadas :");
+        System.out.println("Disciplinas matriculadas :");
+
         for (Disciplina disciplina : disciplinasObrigatorias) {
             System.out.println(disciplina.getId() + " " + disciplina.getNome() + " "
                     + disciplina.getNum_creditosDisciplina() + " " + disciplina.getTipo());
         }
 
         for (Disciplina disciplina : disciplinasOpcionais) {
-
             System.out.println(disciplina.getId() + " " + disciplina.getNome() + " "
                     + disciplina.getNum_creditosDisciplina() + " " + disciplina.getTipo());
-
         }
 
     }
 
-    public void setCurso(Curso curso) {
-        this.curso = curso;
-    }
-
-    public Curso getCurso() {
-        return curso;
-    }
 }

@@ -6,12 +6,8 @@ public class Secretaria extends Usuario {
     Disciplina disciplina;
     Professor professor;
 
-    public Secretaria(int matricula, String nome, String senha) {
-        super();
-        this.setMatricula(matricula);
-        this.setNome(nome);
-        this.setSenha(senha);
-
+    public Secretaria(String nome, String senha) {
+        super(nome, senha);
     }
 
     public void manterInformacoesAluno(Aluno aluno) {

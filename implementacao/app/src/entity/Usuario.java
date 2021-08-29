@@ -1,23 +1,20 @@
 package entity;
 
+import entity.ILogin;
+
 public abstract class Usuario {
 
-    public int matricula;
+    private int matricula;
     protected String nome;
     protected String senha;
+    protected boolean logado;
 
-    public Usuario() {
-
+    public Usuario(String nome, String senha) {
+        this.setNome(nome);
+        this.setSenha(senha);
     }
 
-    public void trocarSenha() {
-
-    }
-
-    public void fazerLogin() {
-
-    }
-
+    // #region Getters and Setters
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -40,8 +37,12 @@ public abstract class Usuario {
     }
 
     public String getSenha() {
-
         return senha;
     }
+
+    public boolean getLogado() {
+        return logado;
+    }
+    // #endregion
 
 }
