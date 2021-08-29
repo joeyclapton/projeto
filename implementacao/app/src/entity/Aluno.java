@@ -1,16 +1,14 @@
 package entity;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import commons.ClassificacaoDisciplinaEnum;
 
 public class Aluno extends Usuario {
-
     private static final int MAX_OBRIGATORIAS = 2;
     private static final int MAX_OPCIONAIS = 3;
+
     protected List<Disciplina> disciplinasObrigatorias = new ArrayList<>();
     protected List<Disciplina> disciplinasOpcionais = new ArrayList<>();
     protected Curso curso;
