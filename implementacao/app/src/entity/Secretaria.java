@@ -1,13 +1,15 @@
 package entity;
 
+import entity.Aluno;;
+
 public class Secretaria extends Usuario {
     Curso curso;
     Aluno aluno;
     Disciplina disciplina;
     Professor professor;
 
-    public Secretaria(String nome, String senha) {
-        super(nome, senha);
+    public Secretaria(int matricula, String nome, String senha) {
+        super(matricula, nome, senha);
     }
 
     public void manterInformacoesAluno(Aluno aluno) {
@@ -20,8 +22,14 @@ public class Secretaria extends Usuario {
     public void manterInformacoesProfessor(Professor professor) {
 
         System.out.println("Nome:" + professor.getNome() + "\n Matrícula :" + professor.getMatricula());
-        professor.mostraDisciplinasMinistradas();
+        professor.toString();
 
+    }
+
+    public Aluno adicionarAluno(int matricula, String nome, String senha) {
+        var aluno = new Aluno(matricula, nome, senha, null);
+
+        return aluno;
     }
 
     // public void manterInformacoesDisciplinas(Disciplina disciplina) {

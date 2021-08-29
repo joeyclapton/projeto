@@ -13,9 +13,8 @@ public class Aluno extends Usuario {
     protected List<Disciplina> disciplinasOpcionais = new ArrayList<>();
     protected Curso curso;
 
-    public Aluno(String nome, String senha, Curso curso) {
-        super(nome, senha);
-
+    public Aluno(int matricula, String nome, String senha, Curso curso) {
+        super(matricula, nome, senha);
         this.setCurso(curso);
     }
 

@@ -4,14 +4,15 @@ import entity.ILogin;
 
 public abstract class Usuario {
 
-    private int matricula;
+    protected int matricula;
     protected String nome;
     protected String senha;
     protected boolean logado;
 
-    public Usuario(String nome, String senha) {
+    public Usuario(int matricula, String nome, String senha) {
         this.setNome(nome);
         this.setSenha(senha);
+        this.setMatricula(matricula);
     }
 
     // #region Getters and Setters
@@ -45,4 +46,15 @@ public abstract class Usuario {
     }
     // #endregion
 
+    public boolean fazerLogin(int matricula, String senha) {
+        boolean existeUsuario = this.matricula == matricula && this.senha.equals(senha);
+
+        if (existeUsuario) {
+            this.logado = true;
+        } else {
+            this.logado = false;
+        }
+
+        return this.logado;
+    }
 }

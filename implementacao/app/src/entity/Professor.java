@@ -8,24 +8,29 @@ public class Professor extends Usuario {
     List<Disciplina> disciplinasMinistradas = new LinkedList<>();
     Disciplina disciplina;
 
-    public Professor(String nome, String senha) {
-        super(nome, senha);
+    public Professor(int matricula, String nome, String senha) {
+        super(matricula, nome, senha);
     }
 
     public void listarAlunosMatriculados(Disciplina disciplina) {
-
-        disciplina.alunosMatriculados();
+        disciplina.toString();
     }
 
-    public void addDisciplinaProdessor(Disciplina disciplina) {
+    public void addDisciplina(Disciplina disciplina) {
         disciplinasMinistradas.add(disciplina);
     }
 
-    public void mostraDisciplinasMinistradas() {
-        System.out.println("Disciplinas Ministradas : ");
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+
+        str.append("Disciplinas ministradas:");
+
         for (Disciplina disciplina : disciplinasMinistradas) {
-            System.out.println(disciplina.getNome());
+            str.append(disciplina.getNome());
         }
+
+        return str.toString();
     }
 
 }
