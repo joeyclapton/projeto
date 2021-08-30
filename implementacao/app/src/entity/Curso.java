@@ -7,11 +7,13 @@ public class Curso {
 
   private String nome;
   private int numCreditos;
+  private int id;
   private ArrayList<Disciplina> disciplinas = new ArrayList<>();
 
-  public Curso(String nome, int numCreditos) {
+  public Curso(int id, String nome, int numCreditos) {
     this.setNome(nome);
     this.setNumCreditos(numCreditos);
+    this.setId(id);
   }
 
   // #region Getters and Setters
@@ -45,6 +47,14 @@ public class Curso {
 
   public Matricula getMatricula() {
     return matricula;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public int getId() {
+    return this.id;
   }
   // #endregion
 

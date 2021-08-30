@@ -14,7 +14,7 @@ public class App {
 
                 Menu menu = new Menu();
 
-                Curso curso1 = new Curso("Engenharia de Software", 590);
+                // Curso curso1 = new Curso("Engenharia de Software", 590);
 
                 // System.out.println(curso1.getNome());
                 // System.out.println(curso1.getNumCreditos());

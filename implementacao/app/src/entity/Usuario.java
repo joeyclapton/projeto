@@ -1,13 +1,15 @@
 package entity;
 
-import entity.ILogin;
-
 public abstract class Usuario {
 
     protected int matricula;
     protected String nome;
     protected String senha;
     protected boolean logado;
+
+    public Usuario() {
+
+    }
 
     public Usuario(int matricula, String nome, String senha) {
         this.setNome(nome);

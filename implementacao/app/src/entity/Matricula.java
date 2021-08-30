@@ -9,19 +9,10 @@ public class Matricula {
      private int matricula;
      Disciplina disciplina;
      public Curso curso;
-     // private LocalDateTime dataInicial;
-     // private LocalDateTime dataFinal;
-     // private LocalDateTime dataAtual;
-     // private String statusAtual;
      public Aluno aluno;
 
      public Matricula(Aluno aluno, Disciplina disciplina) {
           this.matricula = matricula;
-          // this.curso = curso;
-          // this.dataInicial = dataInicial;
-          // this.dataFinal = dataFinal;
-          // this.dataAtual = LocalDateTime.now();
-          // this.statusAtual = Status.NAO_MATRICULADO.name();
           this.disciplina = disciplina;
           this.aluno = aluno;
           this.curso = curso;
