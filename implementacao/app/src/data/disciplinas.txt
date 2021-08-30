@@ -1,7 +1,4 @@
-Cálculo 3;20;OBRIGATORIA;
-Estrutura de dados 3;20;OBRIGATORIA;
-Projeto de software;20;OPCIONAL;
-Estrutura de dados 2 3;20;OPCIONAL;
-Linguagem de sinais;20;OPCIONAL;
-Cálculo 2;20;OBRIGATORIA;
-Arquitetura de software;20;OBRIGATORIA;
+321;Estrutura de dados 2;20;OPCIONAL;
+425;Linguagem de sinais;20;OPCIONAL;
+5234;Cálculo 2;20;OBRIGATORIA;
+490;Arquitetura de software;20;OBRIGATORIA;

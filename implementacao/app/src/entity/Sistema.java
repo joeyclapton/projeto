@@ -72,16 +72,17 @@ public class Sistema {
     private void cadastrarDisciplinas() {
         for (int i = 0; i < this.dadosDisciplinas.size(); i++) {
             String dadoDisciplina[] = this.dadosDisciplinas.get(i).split(";");
-            String nome = dadoDisciplina[0];
-            int num_creditos = Integer.parseInt(dadoDisciplina[1]);
-            String tipo = dadoDisciplina[2];
+            int id = Integer.parseInt(dadoDisciplina[0]);
+            String nome = dadoDisciplina[1];
+            int num_creditos = Integer.parseInt(dadoDisciplina[2]);
+            String tipo = dadoDisciplina[3];
 
             if (tipo.equals("OBRIGATORIA")) {
-                this.disciplinas
-                        .add(new Disciplina(nome, num_creditos, ClassificacaoDisciplinaEnum.OBRIGATORIA, null, null));
+                this.disciplinas.add(
+                        new Disciplina(id, nome, num_creditos, ClassificacaoDisciplinaEnum.OBRIGATORIA, null, null));
             } else {
                 this.disciplinas
-                        .add(new Disciplina(nome, num_creditos, ClassificacaoDisciplinaEnum.OPTATIVA, null, null));
+                        .add(new Disciplina(id, nome, num_creditos, ClassificacaoDisciplinaEnum.OPTATIVA, null, null));
             }
         }
     }

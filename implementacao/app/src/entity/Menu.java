@@ -74,6 +74,7 @@ public class Menu {
         System.out.println("Digite sua opção: ");
         System.out.println("1- Cadastrar disciplina");
         System.out.println("0- Sair");
+        this.divisor();
 
         int opcao = teclado.nextInt();
         teclado.nextLine();
@@ -81,7 +82,7 @@ public class Menu {
         return opcao;
     }
 
-    private void listarDisciplinas(int opcao) {
+    private void listarDisciplinas() {
         Teclado.limparTela();
 
         for (int i = 0; i < this.disciplinas.size(); i++) {
@@ -89,7 +90,7 @@ public class Menu {
 
             this.divisor();
 
-            System.out.println((i + 1) + "- " + disciplina.getNome() + " - " + disciplina.getTipo());
+            System.out.println(disciplina.getId() + "- " + disciplina.getNome() + " - " + disciplina.getTipo());
         }
     }
 
@@ -176,10 +177,27 @@ public class Menu {
 
                 switch (opcao) {
                     case 1:
-                        System.out.println("Digite a matéria escolhida: ");
-                        var materia = teclado.nextInt();
+                        var aluno = new Aluno(usuarioLogado.getMatricula(), usuarioLogado.getNome(),
+                                usuarioLogado.getSenha(), null);
+                        this.listarDisciplinas();
+                        System.out.println("\nDigite a o código da matéroa escolhida: ");
 
-                        this.listarDisciplinas(materia);
+                        var materia = teclado.nextInt();
+                        Disciplina disciplinaSelecionada = null;
+
+                        for (int i = 0; i < this.disciplinas.size(); i++) {
+                            var disciplina = this.disciplinas.get(i);
+                            if (disciplina.getId() == materia) {
+                                disciplinaSelecionada = disciplina;
+                            }
+                        }
+
+                        if (disciplinaSelecionada.getTipo() == ClassificacaoDisciplinaEnum.OBRIGATORIA) {
+                            aluno.cadastrarDisciplinasObrigatorias(disciplinaSelecionada);
+                        } else {
+                            aluno.cadastrarDisciplinasOpcionais(disciplinaSelecionada);
+                        }
+
                         break;
                 }
 

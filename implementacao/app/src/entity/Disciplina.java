@@ -22,12 +22,14 @@ public class Disciplina {
   List<Aluno> alunos = new LinkedList<>();
   Professor professor;
 
-  public Disciplina(String nome, int num_creditos, ClassificacaoDisciplinaEnum tipo, Curso curso, Professor professor) {
+  public Disciplina(int id, String nome, int num_creditos, ClassificacaoDisciplinaEnum tipo, Curso curso,
+      Professor professor) {
     this.nome = nome;
     this.num_creditos = num_creditos;
     this.tipo = tipo;
     this.curso = curso;
     this.professor = professor;
+    this.id = id;
   }
 
   // #region Getters and Setters
