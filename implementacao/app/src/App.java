@@ -5,8 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import commons.ClassificacaoDisciplinaEnum;
+import controller.menu.Menu;
 import entity.*;
-import entity.Menu;
 
 public class App {
 

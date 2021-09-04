@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import static java.nio.file.Files.readAllLines;
 
+import services.UsuarioFactory;
+
 public class Sistema {
     private ArrayList<Usuario> usuarios;
     private List<String> dadosUsuarios;
@@ -48,13 +50,7 @@ public class Sistema {
             int matricula = Integer.parseInt(dadoUsuario[2]);
             String senha = dadoUsuario[3];
 
-            if (tipo.equals("ALUNO")) {
-                this.usuarios.add(new Aluno(matricula, nome, senha));
-            } else if (tipo.equals("PROFESSOR")) {
-                this.usuarios.add(new Professor(matricula, nome, senha));
-            } else {
-                this.usuarios.add(new Secretaria(matricula, nome, senha));
-            }
+            this.usuarios.add(UsuarioFactory.create(matricula, nome, senha, tipo));
         }
     }
 

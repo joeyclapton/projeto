@@ -1,18 +1,12 @@
-package entity;
+package controller.menu;
 
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.IntStream;
 import java.util.Scanner;
-import static java.nio.file.Files.readAllLines;
 
 import entity.*;
 import utils.*;
 import commons.*;
+import controller.*;
 
 public class Menu {
 
@@ -20,6 +14,7 @@ public class Menu {
     private ArrayList<Usuario> usuarios;
     private ArrayList<Disciplina> disciplinas;
     private ArrayList<Curso> cursos;
+    private Opcoes opcoes;
 
     public Menu() throws Exception {
         this.init();
@@ -27,7 +22,7 @@ public class Menu {
 
     private void init() throws Exception {
         this.sistema = new Sistema();
-
+        this.opcoes = new Opcoes();
         this.disciplinas = this.sistema.getDisciplinas();
         this.usuarios = this.sistema.getUsuarios();
         this.cursos = new ArrayList<>();
@@ -38,48 +33,8 @@ public class Menu {
         menuLogin(usuarioLogado);
     }
 
-    private int menuSecretaria(Scanner teclado) {
-        System.out.println("Sistema secretaria");
-        this.divisor();
-        System.out.println("Digite sua opção: ");
-        System.out.println("1- Cadastrar aluno");
-        System.out.println("2- Cadastrar professor");
-        System.out.println("3- Cadastrar curso");
-        System.out.println("0 - Sair");
-        this.divisor();
-
-        int opcao = teclado.nextInt();
-        teclado.nextLine();
-
-        return opcao;
-    }
-
-    private int menuProfessor(Scanner teclado) {
-        System.out.println("Sistema professor");
-        this.divisor();
-        System.out.println("Digite sua opção: ");
-        System.out.println("1- Listar alunos");
-        System.out.println("0 - Sair");
-        this.divisor();
-
-        int opcao = teclado.nextInt();
-        teclado.nextLine();
-
-        return opcao;
-    }
-
-    private int menuAluno(Scanner teclado) {
-        System.out.println("Sistema aluno");
-        this.divisor();
-        System.out.println("Digite sua opção: ");
-        System.out.println("1- Cadastrar disciplina");
-        System.out.println("0- Sair");
-        this.divisor();
-
-        int opcao = teclado.nextInt();
-        teclado.nextLine();
-
-        return opcao;
+    private void divisor() {
+        System.out.println("-----------------------------------------");
     }
 
     private void listarDisciplinas() {
@@ -94,10 +49,6 @@ public class Menu {
         }
     }
 
-    private void divisor() {
-        System.out.println("-----------------------------------------");
-    }
-
     private void menuLogin(Usuario usuarioLogado) {
         Teclado.limparTela();
 
@@ -108,7 +59,7 @@ public class Menu {
             var secretaria = new Secretaria(usuarioLogado.getMatricula(), usuarioLogado.getNome(),
                     usuarioLogado.getSenha());
             do {
-                opcao = menuSecretaria(teclado);
+                opcao = opcoes.menuSecretaria(teclado);
 
                 switch (opcao) {
                     case 1: {
@@ -173,7 +124,7 @@ public class Menu {
             var opcao = 0;
 
             do {
-                opcao = menuAluno(teclado);
+                opcao = opcoes.menuAluno(teclado);
 
                 switch (opcao) {
                     case 1:
