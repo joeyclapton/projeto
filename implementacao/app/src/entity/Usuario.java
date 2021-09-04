@@ -42,21 +42,5 @@ public abstract class Usuario {
     public String getSenha() {
         return senha;
     }
-
-    public boolean getLogado() {
-        return logado;
-    }
     // #endregion
-
-    public boolean fazerLogin(int matricula, String senha) {
-        boolean existeUsuario = this.matricula == matricula && this.senha.equals(senha);
-
-        if (existeUsuario) {
-            this.logado = true;
-        } else {
-            this.logado = false;
-        }
-
-        return this.logado;
-    }
 }

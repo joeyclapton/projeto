@@ -1,29 +1,50 @@
 package entity;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class Login {
+public class Login implements ILogin {
 
-    public static Usuario login(Scanner teclado, ArrayList<Usuario> usuarios) {
-        System.out.println("Fazer login");
-        System.out.println("--------------------------------");
-        System.out.println("Digite sua matrícula: ");
-        int matricula = teclado.nextInt();
-        teclado.nextLine();
+    private ArrayList<Usuario> usuarios;
+    private Usuario usuarioLogado;
 
-        System.out.println("Digite sua senha: ");
-        String senha = teclado.nextLine();
+    public Login(ArrayList<Usuario> usuarios) {
+        this.usuarios = usuarios;
+        this.usuarioLogado = null;
+    }
 
-        Usuario usuarioLogado = null;
+    // public Usuario login() {
+    // System.out.println("Fazer login");
+    // System.out.println("--------------------------------");
+    // System.out.println("Digite sua matrícula: ");
 
+    // var matricula = this.teclado.nextInt();
+    // this.teclado.nextLine();
+
+    // System.out.println("Digite sua senha: ");
+    // var senha = this.teclado.nextLine();
+
+    // }
+
+    @Override
+    public void fazerLogin(int matricula, String senha) {
         for (Usuario usuario : usuarios) {
-            if (usuario.fazerLogin(matricula, senha)) {
-                usuarioLogado = usuario;
+            if (usuario.getMatricula() == matricula && usuario.getSenha() == senha) {
+                this.usuarioLogado = usuario;
+                System.out.println("Usuário logado");
+            } else {
+                System.out.println("Login ou senha incorretos");
             }
         }
+    }
 
-        return usuarioLogado;
+    @Override
+    public Usuario getUsuarioLogado() {
+        return this.usuarioLogado;
+    }
+
+    @Override
+    public void trocarSenha(int matricula) {
+
     }
 
 }

@@ -1,46 +1,47 @@
 package entity;
 
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
 
 public class Matricula {
-     private int matricula;
+     private int id;
      Disciplina disciplina;
-     public Curso curso;
-     public Aluno aluno;
+     private Curso curso;
+     private Aluno aluno;
+     private Semestre semestre;
 
-     public Matricula(Aluno aluno, Disciplina disciplina) {
-          this.matricula = matricula;
+     public Matricula(Aluno aluno, Disciplina disciplina, Curso curso) {
           this.disciplina = disciplina;
           this.aluno = aluno;
           this.curso = curso;
+
+          this.init();
+     }
+
+     private void init() {
+          var dataInicio = LocalDateTime.of(2014, 9, 10, 6, 40, 45);
+          var dataFim = LocalDateTime.of(2022, 9, 10, 6, 40, 45);
+
+          this.semestre = new Semestre(1, dataInicio, dataFim);
+     }
+
+     private boolean podeMatricular() {
+          return this.semestre.podeMatricular();
      }
 
      public void efetuarMatricula() {
-          this.disciplina.addAlunoDisciplina(this.aluno);
-          System.out.println("Aluno cadastrado disciplina !" + this.aluno.getNome());
+          if (this.podeMatricular()) {
+               this.disciplina.addAlunoDisciplina(this.aluno);
+               System.out.println("Aluno cadastrado disciplina !" + this.aluno.getNome());
+          } else {
+               System.out.println("Fora do período de matrícula!");
+          }
      }
 
      public void cancelarMatricula() {
-          this.disciplina.removerAlunoDisciplina(this.aluno);
+          if (this.podeMatricular()) {
+               this.disciplina.removerAlunoDisciplina(this.aluno);
+          } else {
+               System.out.println("Fora do período de matrícula!");
+          }
      }
-
-     public void trancarCurso() {
-     }
-
-     /*
-      * public void setCurso(Curso curso) { this.curso = curso; }
-      * 
-      * // public void setStatusAtual(String statusAtual) {this.statusAtual =
-      * statusAtual; }
-      * 
-      * public String getStatusAtual() { return this.statusAtual; }
-      * 
-      * public Curso getCurso() { return curso; }
-      * 
-      * 
-      */
-
 }

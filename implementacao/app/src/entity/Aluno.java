@@ -3,19 +3,21 @@ package entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import commons.ClassificacaoDisciplinaEnum;
-
 public class Aluno extends Usuario {
-    private static final int MAX_OBRIGATORIAS = 2;
-    private static final int MAX_OPCIONAIS = 3;
+    private static final int MAX_OBRIGATORIAS;
+    private static final int MAX_OPCIONAIS;
 
     protected List<Disciplina> disciplinasObrigatorias = new ArrayList<>();
     protected List<Disciplina> disciplinasOpcionais = new ArrayList<>();
     protected Curso curso;
 
-    public Aluno(int matricula, String nome, String senha, Curso curso) {
+    static {
+        MAX_OBRIGATORIAS = 6;
+        MAX_OPCIONAIS = 2;
+    }
+
+    public Aluno(int matricula, String nome, String senha) {
         super(matricula, nome, senha);
-        this.setCurso(curso);
     }
 
     // #region Getters and Setters
@@ -82,20 +84,23 @@ public class Aluno extends Usuario {
         return (disciplinasObrigatorias.size() > 0 && disciplinasOpcionais.size() < MAX_OPCIONAIS);
     }
 
-    public void exibirMatriculas() {
+    @Override
+    public String toString() {
 
-        System.out.println("Disciplinas matriculadas :");
+        StringBuilder string = new StringBuilder();
+        string.append("Disciplinas matriculadas :");
 
         for (Disciplina disciplina : disciplinasObrigatorias) {
-            System.out.println(disciplina.getId() + " " + disciplina.getNome() + " "
-                    + disciplina.getNum_creditosDisciplina() + " " + disciplina.getTipo());
+            string.append(disciplina.getId() + " " + disciplina.getNome() + " " + disciplina.getNum_creditosDisciplina()
+                    + " " + disciplina.getTipo());
         }
 
         for (Disciplina disciplina : disciplinasOpcionais) {
-            System.out.println(disciplina.getId() + " " + disciplina.getNome() + " "
-                    + disciplina.getNum_creditosDisciplina() + " " + disciplina.getTipo());
+            string.append(disciplina.getId() + " " + disciplina.getNome() + " " + disciplina.getNum_creditosDisciplina()
+                    + " " + disciplina.getTipo());
         }
 
+        return string.toString();
     }
 
 }

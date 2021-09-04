@@ -49,7 +49,7 @@ public class Sistema {
             String senha = dadoUsuario[3];
 
             if (tipo.equals("ALUNO")) {
-                this.usuarios.add(new Aluno(matricula, nome, senha, null));
+                this.usuarios.add(new Aluno(matricula, nome, senha));
             } else if (tipo.equals("PROFESSOR")) {
                 this.usuarios.add(new Professor(matricula, nome, senha));
             } else {

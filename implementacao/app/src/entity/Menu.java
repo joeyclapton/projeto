@@ -34,7 +34,7 @@ public class Menu {
 
         Scanner teclado = new Scanner(System.in);
 
-        Usuario usuarioLogado = Login.login(teclado, this.usuarios);
+        Usuario usuarioLogado = null;
         menuLogin(usuarioLogado);
     }
 
@@ -178,7 +178,7 @@ public class Menu {
                 switch (opcao) {
                     case 1:
                         var aluno = new Aluno(usuarioLogado.getMatricula(), usuarioLogado.getNome(),
-                                usuarioLogado.getSenha(), null);
+                                usuarioLogado.getSenha());
                         this.listarDisciplinas();
                         System.out.println("\nDigite a o código da matéroa escolhida: ");
 

@@ -12,7 +12,24 @@ public class App {
 
         public static void main(String[] args) throws Exception {
 
-                Menu menu = new Menu();
+                var curso = new Curso(0, "Engenharia de Software", 20);
+                var aluno = new Aluno(23, "Joey Clapton", "123");
+                var professor = new Professor(23, "Caram", "35577");
+                var calculo = new Disciplina(12, "Cálculo 1", 8, ClassificacaoDisciplinaEnum.OBRIGATORIA, curso,
+                                professor);
+                var paa = new Disciplina(13, "PAA", 30, ClassificacaoDisciplinaEnum.OBRIGATORIA, curso, professor);
+
+                var matricula = new Matricula(aluno, calculo, curso);
+
+                curso.cadastrarDisciplina(calculo);
+                curso.cadastrarDisciplina(paa);
+
+                matricula.efetuarMatricula();
+
+                professor.addDisciplina(calculo);
+                professor.addDisciplina(paa);
+
+                System.out.println(professor.toString());
 
                 // Curso curso1 = new Curso("Engenharia de Software", 590);
 

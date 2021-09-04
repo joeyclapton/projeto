@@ -6,7 +6,7 @@ public class Secretaria extends Usuario {
     }
 
     public Aluno adicionarAluno(int matricula, String nome, String senha) {
-        var aluno = new Aluno(matricula, nome, senha, null);
+        var aluno = new Aluno(matricula, nome, senha);
 
         return aluno;
     }
