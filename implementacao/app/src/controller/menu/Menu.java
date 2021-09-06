@@ -27,9 +27,7 @@ public class Menu {
         this.usuarios = this.sistema.getUsuarios();
         this.cursos = new ArrayList<>();
 
-        Scanner teclado = new Scanner(System.in);
-
-        Usuario usuarioLogado = null;
+        Usuario usuarioLogado = this.opcoes.menuLogin(this.usuarios);
         menuLogin(usuarioLogado);
     }
 
@@ -51,9 +49,9 @@ public class Menu {
 
     private void menuLogin(Usuario usuarioLogado) {
         Teclado.limparTela();
+        System.out.println("Usuário logado: " + usuarioLogado);
 
         Scanner teclado = new Scanner(System.in);
-
         if (usuarioLogado.getClass().equals(Secretaria.class)) {
             var opcao = 0;
             var secretaria = new Secretaria(usuarioLogado.getMatricula(), usuarioLogado.getNome(),
@@ -131,7 +129,7 @@ public class Menu {
                         var aluno = new Aluno(usuarioLogado.getMatricula(), usuarioLogado.getNome(),
                                 usuarioLogado.getSenha());
                         this.listarDisciplinas();
-                        System.out.println("\nDigite a o código da matéroa escolhida: ");
+                        System.out.println("\nDigite a o código da matéria escolhida: ");
 
                         var materia = teclado.nextInt();
                         Disciplina disciplinaSelecionada = null;
@@ -153,6 +151,18 @@ public class Menu {
                 }
 
             } while (opcao != 0);
+        } else {
+            var opcao = 0;
+
+            opcao = opcoes.menuProfessor(teclado);
+            switch (opcao) {
+                case 1:
+                    var professor = new Professor(usuarioLogado.getMatricula(), usuarioLogado.getNome(),
+                            usuarioLogado.getSenha());
+
+                    System.out.println(professor.toString());
+                    break;
+            }
         }
 
     }

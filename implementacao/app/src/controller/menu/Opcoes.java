@@ -1,6 +1,10 @@
 package controller.menu;
 
 import java.util.Scanner;
+import java.util.ArrayList;
+
+import entity.Usuario;
+import entity.Login;
 
 public class Opcoes {
 
@@ -9,6 +13,23 @@ public class Opcoes {
 
     private void divisor() {
         System.out.println("-----------------------------------------");
+    }
+
+    public Usuario menuLogin(ArrayList<Usuario> usuarios) {
+
+        var login = new Login(usuarios);
+        // Scanner teclado = new Scanner(System.in);
+
+        // System.out.println("Fazer login");
+        // System.out.println("--------------------------------");
+        // System.out.println("Digite sua matrícula: ");
+        // int matricula = 1;
+
+        // System.out.println("Digite sua senha: ");
+        // String senha = teclado.nextLine();
+
+        // login.fazerLogin(matricula, senha);
+        return login.getUsuarioLogado();
     }
 
     public int menuProfessor(Scanner teclado) {

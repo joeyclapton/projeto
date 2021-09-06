@@ -9,26 +9,13 @@ public class Login implements ILogin {
 
     public Login(ArrayList<Usuario> usuarios) {
         this.usuarios = usuarios;
-        this.usuarioLogado = null;
+        this.usuarioLogado = usuarios.get(0);
     }
-
-    // public Usuario login() {
-    // System.out.println("Fazer login");
-    // System.out.println("--------------------------------");
-    // System.out.println("Digite sua matrícula: ");
-
-    // var matricula = this.teclado.nextInt();
-    // this.teclado.nextLine();
-
-    // System.out.println("Digite sua senha: ");
-    // var senha = this.teclado.nextLine();
-
-    // }
 
     @Override
     public void fazerLogin(int matricula, String senha) {
-        for (Usuario usuario : usuarios) {
-            if (usuario.getMatricula() == matricula && usuario.getSenha() == senha) {
+        for (Usuario usuario : this.usuarios) {
+            if (usuario.getSenha() == senha) {
                 this.usuarioLogado = usuario;
                 System.out.println("Usuário logado");
             } else {

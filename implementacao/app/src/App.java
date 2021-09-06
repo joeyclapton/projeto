@@ -7,29 +7,35 @@ import java.util.List;
 import commons.ClassificacaoDisciplinaEnum;
 import controller.menu.Menu;
 import entity.*;
+import controller.*;
+import commons.*;
 
 public class App {
 
         public static void main(String[] args) throws Exception {
 
-                var curso = new Curso(0, "Engenharia de Software", 20);
-                var aluno = new Aluno(23, "Joey Clapton", "123");
-                var professor = new Professor(23, "Caram", "35577");
-                var calculo = new Disciplina(12, "Cálculo 1", 8, ClassificacaoDisciplinaEnum.OBRIGATORIA, curso,
-                                professor);
-                var paa = new Disciplina(13, "PAA", 30, ClassificacaoDisciplinaEnum.OBRIGATORIA, curso, professor);
+                 var curso = new Curso(0, "Engenharia de Software", 20);
+                 var aluno = new Aluno(23, "Joey Clapton", "123");
+                 var professor = new Professor(23, "Caram", "35577");
+                 var calculo = new Disciplina(12, "Cálculo 1", 8,
+                 ClassificacaoDisciplinaEnum.OBRIGATORIA, curso,
+                 professor);
+                 var paa = new Disciplina(13, "PAA", 30,
+                 ClassificacaoDisciplinaEnum.OBRIGATORIA, curso, professor);
 
-                var matricula = new Matricula(aluno, calculo, curso);
+                 var matricula = new Matricula(aluno, calculo, curso);
 
-                curso.cadastrarDisciplina(calculo);
-                curso.cadastrarDisciplina(paa);
+                 curso.cadastrarDisciplina(calculo);
+                 curso.cadastrarDisciplina(paa);
 
-                matricula.efetuarMatricula();
+                 matricula.efetuarMatricula();
 
-                professor.addDisciplina(calculo);
-                professor.addDisciplina(paa);
+                 professor.addDisciplina(calculo);
+                 professor.addDisciplina(paa);
 
-                System.out.println(professor.toString());
+                 System.out.println(professor.toString());
+
+                Menu menu = new Menu();
 
                 // Curso curso1 = new Curso("Engenharia de Software", 590);
 

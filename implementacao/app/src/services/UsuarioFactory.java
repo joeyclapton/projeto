@@ -10,7 +10,7 @@ public class UsuarioFactory {
 
         Usuario usuario = null;
 
-        if (tipo.equals("SECRETARIA")) {
+        if (tipo.equals("FUNCIONARIO")) {
             usuario = new Secretaria(matricula, nome, senha);
         } else if (tipo.equals("ALUNO")) {
             usuario = new Aluno(matricula, nome, senha);
