@@ -51,6 +51,7 @@ public class Opcoes {
         this.divisor();
         System.out.println("Digite sua opção: ");
         System.out.println("1- Cadastrar disciplina");
+        System.out.println("2- Listar disciplinas cadastradas");
         System.out.println("0- Sair");
         this.divisor();
 

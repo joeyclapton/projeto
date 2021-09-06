@@ -36,6 +36,8 @@ public class Aluno extends Usuario {
         if (podeCadastrar && disciplina != null) {
             this.disciplinasObrigatorias.add(disciplina);
         }
+
+        System.out.println(this.disciplinasObrigatorias.size());
     }
 
     public void cadastrarDisciplinasOpcionais(Disciplina disciplina) {

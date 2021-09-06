@@ -27,7 +27,7 @@ public class Menu {
         this.disciplinas = this.sistema.getDisciplinas();
         this.usuarios = this.sistema.getUsuarios();
         this.cursos = new ArrayList<>();
-        Serializacao.gravarArquivoBinario(this.usuarios, "usuarios.bin");
+        Serializacao.gravarArquivoBinario(this.usuarios, "universidade.bin");
 
         Usuario usuarioLogado = this.opcoes.menuLogin(this.usuarios);
         menuLogin(usuarioLogado);
@@ -51,7 +51,7 @@ public class Menu {
 
     private void menuLogin(Usuario usuarioLogado) {
         Teclado.limparTela();
-        System.out.println("Usuário logado: " + usuarioLogado);
+        System.out.println("Usuário logado:");
 
         Scanner teclado = new Scanner(System.in);
         if (usuarioLogado.getClass().equals(Secretaria.class)) {
@@ -126,10 +126,9 @@ public class Menu {
             do {
                 opcao = opcoes.menuAluno(teclado);
 
+                var aluno = new Aluno(usuarioLogado.getMatricula(), usuarioLogado.getNome(), usuarioLogado.getSenha());
                 switch (opcao) {
                     case 1:
-                        var aluno = new Aluno(usuarioLogado.getMatricula(), usuarioLogado.getNome(),
-                                usuarioLogado.getSenha());
                         this.listarDisciplinas();
                         System.out.println("\nDigite a o código da matéria escolhida: ");
 
@@ -149,6 +148,10 @@ public class Menu {
                             aluno.cadastrarDisciplinasOpcionais(disciplinaSelecionada);
                         }
 
+                        break;
+
+                    case 2:
+                        aluno.toString();
                         break;
                 }
 
