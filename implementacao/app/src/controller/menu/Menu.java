@@ -7,6 +7,7 @@ import entity.*;
 import utils.*;
 import commons.*;
 import controller.*;
+import services.*;
 
 public class Menu {
 
@@ -26,6 +27,7 @@ public class Menu {
         this.disciplinas = this.sistema.getDisciplinas();
         this.usuarios = this.sistema.getUsuarios();
         this.cursos = new ArrayList<>();
+        Serializacao.gravarArquivoBinario(this.usuarios, "usuarios.bin");
 
         Usuario usuarioLogado = this.opcoes.menuLogin(this.usuarios);
         menuLogin(usuarioLogado);
