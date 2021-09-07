@@ -7,57 +7,29 @@
 
 Como Aluno,
 
-Desejo verificar minha  grade curricular,
+Desejo verificar as disciplinas que me matriculei no semestre,
 
-Para conferir quais disciplinas ainda não foram cursadas.
-<br><br>
-
-
-**2.Alteração de dados cadastrais**
-
-Como Aluno,
-
-Desejo poder realizar mudança em meus dados cadastrais,
-
-Para atualizar informações.
+Para conferir quais disciplinas.
 <br><br>
 
 
 
-**3.Consulta de dados cadastrais do aluno**
+
+
+**2.Consulta de dados cadastrais do aluno**
 
 Como Secretária,
 
-Desejo conferir dados cadastrais e de histórico de um aluno atráves do número de matrícula,
+Desejo conferir dados cadastrais de um aluno atráves do número de matrícula,
 
 Para simples conferimento caso seja necessário.
 <br><br>
 
 
 
-**4.Irregularidade em pagemento**
-
-Como Secretária,
-
-Desejo vizualizar histórico de pagamento do aluno por número de matrícula,
-
-Para  comprovamento  de irregularidade de pagamentos perante o aluno.
-<br><br>
 
 
-
-**5.Recebimentos de boletos de cobrança**
-
-Como Aluno,
-
-Desejo obter boletos mensais de cobrença,
-
-Para realizar o pagemento da mensalidade.
-<br><br>
-
-
-
-**6.Alocamento de Professor e Disciplinas**
+**3.Alocamento de Professor e Disciplinas**
 
 Como Coordenador do Curso,
 
@@ -68,20 +40,20 @@ Para que esse possa ter o controle sobre a mesma.
 
 
 
-**7.Gerenciamento de Professores e Disciplinas**
+**4.Gerenciamento de Professores e Disciplinas**
 
-Como Coordenador do Curso,
+Como Secretaria,
 
-Desejo verificar os professores já alocados em determinada disciplina e aqueles que não estão alocados,
+Desejo verificar os professores já alocados em determinadas disciplinas ,
 
 Para realizar o gerenciamento das disciplinas.
 <br><br>
 
 
 
-**8.Verificamento de prioridade de disciplina**
+**5.Verificamento de prioridade de disciplina**
 
-Como Coordenador do Curso,
+Como Secretaria,
 
 Desejo verificar a quantidade de disciplinas atuais ministradas por um professor,
 
@@ -90,7 +62,7 @@ Para verificar o nível de priorizamnto de alocação de disciplina.
 
 
 
-**9.Listamento de alunos**
+**6.Listamento de alunos**
 
 Como Professor,
 
@@ -101,7 +73,7 @@ Para realizar chamada e marcar faltas.
 
 
 
-**10.Verificação de crédito associado a disciplina**
+**7.Verificação de crédito associado a disciplina**
 
 Como Aluno,
 
@@ -112,7 +84,7 @@ Para conhecimento de quais disciplinasas tem maior peso sobre as notas do semest
 
 
 
-**11.Listamento de obrigatoriedade de disciplinas**
+**8.Listamento de obrigatoriedade de disciplinas**
 
 Como Aluno,
 
@@ -123,7 +95,7 @@ Para verificar quais opções de diciplinas posso cursar.
 
 
 
-**12.Efetivação de matrícula**
+**9.Efetivação de matrícula**
 
 Como Aluno ,
 
@@ -134,7 +106,7 @@ Para saber se minha matrícula foi devidamente efetivada.
 
 
 
-**13.Cancelamento de matrícula**
+**10.Cancelamento de matrícula**
 
 Como Aluno,
 
@@ -144,7 +116,7 @@ Para poder realizar matrícula em uma disciplina diferente.
 <br><br>
 
 
-**14.Notificação de máximo de matrícula atingido**
+**11.Notificação de máximo de matrícula atingido**
 
 Como Aluno,
 
@@ -155,7 +127,7 @@ Para controlar disciplinas cursadas no semestre.
 
 
 
-**15.Realizar nova matrícula em disciplina**
+**12.Realizar nova matrícula em disciplina**
 
 Como Aluno,
 
@@ -166,9 +138,9 @@ Para ter controle sobre minha grade curricular.
 
 
 
-**16.Lista de status de disciplinas**
+**13.Lista de status de disciplinas**
 
-Como Coordenador do Curso,
+Como Secretaria,
 
 Desejo uma lista de status de disciplinas ativas , canceladas e encerradas,
 
@@ -177,9 +149,9 @@ Para controle do curso.
 
 
 
-**17.Notificação de disciplina cancelada**
+**14.Notificação de disciplina cancelada**
 
-Como Coordenador do Curso,
+Como Secretaria,
 
 Desejo receber notificação quando uma disciplina for cancelada,
 
